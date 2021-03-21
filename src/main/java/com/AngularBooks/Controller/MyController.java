@@ -25,31 +25,31 @@ import com.AngularBooks.Services.BookService;
 public class MyController {
 	@Autowired
 	public BookService use;
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "https://angular-books-kp.herokuapp.com")
 	@GetMapping("/books/{bookId}")
 	public Books getOneBook(@PathVariable int bookId)
 	{
 		return this.use.getSingleBook(bookId);
 	}
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "https://angular-books-kp.herokuapp.com")
 	@GetMapping("/books")
 	public List<Books> getAllBooks()
 	{
 		return this.use.getThemAll();
 	}
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "https://angular-books-kp.herokuapp.com")
 	@PostMapping("/books")
 	public Books addBook(@RequestBody Books book)
 	{
 		return this.use.addSingleBook(book);
 	}
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "https://angular-books-kp.herokuapp.com")
 	@PutMapping("/books")
 	public Books updateBook(@RequestBody Books book )
 	{
 		return this.use.updateSingleBook(book);
 	}
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "https://angular-books-kp.herokuapp.com")
 	@DeleteMapping("/books/{bookId}")
 	public ResponseEntity<HttpStatus> deleteBook(@PathVariable int bookId)
 	{
